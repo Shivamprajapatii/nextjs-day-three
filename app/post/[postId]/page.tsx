@@ -1,11 +1,15 @@
-export default function BlogPost({params} : any ){
+import axios from "axios";
 
-    const postId = params.postId;
-    console.log(postId);
+export default async function BlogPost({params} : any ){
+    const postId = (await params).postId;
+    const responce = await axios.get(`https://jsonplaceholder.typicode.com/posts/${postId}`);
 
     return(
         <div>
-            Hii There {postId}
+            <h1>Post{responce.data.id}</h1>
+            Id : {responce.data.id} <br />
+            Title : {responce.data.title} <br />
+            Body : {responce.data.body}
         </div>
     )
 }
