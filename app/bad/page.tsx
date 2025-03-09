@@ -1,7 +1,7 @@
 export default function(){
-    return(
+    return (
         <div>
-            Hiii there this is User Home Page
+            Hii bad Page
         </div>
     )
 }
